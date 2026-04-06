@@ -1,6 +1,6 @@
 import type { GameState, Question, GameEvent, GameEventType } from '@/types';
 
-// 全局游戏状态
+// 全局游戏状态存储
 class GameStore {
   private state: GameState = {
     currentGameId: null,
