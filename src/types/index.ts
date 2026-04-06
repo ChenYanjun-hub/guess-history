@@ -60,6 +60,7 @@ export interface ApiResponse<T = unknown> {
 // SSE 事件类型
 export type GameEventType =
   | 'game:new'
+  | 'game:reset'
   | 'question:added'
   | 'game:ended'
   | 'lock:changed';
