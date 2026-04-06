@@ -1,0 +1,95 @@
+/* 宣纸风格主题 */
+@import "tailwindcss";
+
+:root {
+  /* 宣纸色系 */
+  --paper-light: #F5ECD7;
+  --paper: #E8DCC4;
+  --paper-dark: #D4C8A8;
+
+  /* 墨色系 */
+  --ink: #2A2520;
+  --ink-light: #5C5550;
+  --ink-muted: #8A8580;
+
+  /* 暖色点缀 */
+  --warm-yellow: #E6C875;
+  --warm-orange: #D4A853;
+  --seal-red: #C23A2B;
+  --accent-green: #4A7C59;
+
+  /* 背景和前景 */
+  --background: var(--paper-light);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* 宣纸色 */
+  --color-paper-light: var(--paper-light);
+  --color-paper: var(--paper);
+  --color-paper-dark: var(--paper-dark);
+
+  /* 墨色 */
+  --color-ink: var(--ink);
+  --color-ink-light: var(--ink-light);
+  --color-ink-muted: var(--ink-muted);
+
+  /* 暖色 */
+  --color-warm-yellow: var(--warm-yellow);
+  --color-warm-orange: var(--warm-orange);
+  --color-seal-red: var(--seal-red);
+  --color-accent-green: var(--accent-green);
+}
+
+/* 全局样式 */
+body {
+  background: var(--paper-light);
+  color: var(--ink);
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Source Han Serif CN", serif;
+  min-height: 100vh;
+}
+
+/* 宣纸纹理背景 */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 链接样式 */
+a {
+  color: var(--warm-orange);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ink-muted);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-light);
+}
